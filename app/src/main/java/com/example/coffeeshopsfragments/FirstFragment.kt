@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -47,9 +48,10 @@ class FirstFragment : Fragment() {
         recView.adapter = adaptador
         recView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-
         adaptador.onClick = {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            val t = items[recView.getChildAdapterPosition(it)]
+            val bundle = bundleOf("NOM" to getString(t.nombre))
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
         }
 
     }

@@ -14,4 +14,9 @@
     <string name="picadilly">St Picadilly Circus, London</string>
     <string name="angelGuimera">St Angel Guimera, Valencia</string>
     <string name="kinkerstraat">St Kinkerstraat, Amsterdam</string>
+    <string name="comentario1">Muy recomendable. Volvere seguro</string>
+    <string name="comentario2">Acogedor.Muy buen ambiente</string>
+    <string name="comentario3">Buenos precios</string>
+    <string name="comentario4">Servicio algo flojo</string>
+    <string name="comentario5">Para repetir… extesa carta de cafes</string>
 </resources>
