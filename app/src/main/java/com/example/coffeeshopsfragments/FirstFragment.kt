@@ -50,6 +50,7 @@ class FirstFragment : Fragment() {
 
         adaptador.onClick = {
             val t = items[recView.getChildAdapterPosition(it)]
+            // Pasar informacion de un fragment a otro
             val bundle = bundleOf("NOM" to getString(t.nombre))
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
         }
