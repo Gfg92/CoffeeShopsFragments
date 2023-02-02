@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.core.os.bundleOf
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -41,7 +43,6 @@ class FirstFragment : Fragment() {
         items.add(Card(R.mipmap.images6, R.string.sweetCup, R.string.kinkerstraat))
 
         val recView = view.findViewById<RecyclerView>(R.id.recview)
-
         recView.setHasFixedSize(true)
 
         val adaptador = Card_Adapter(items)
@@ -52,8 +53,15 @@ class FirstFragment : Fragment() {
             val t = items[recView.getChildAdapterPosition(it)]
             // Pasar informacion de un fragment a otro
             val bundle = bundleOf("NOM" to getString(t.nombre))
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
+//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
+
+            val idtexto: TextView = view.findViewById(R.id.textNombre)
+            val extras = FragmentNavigatorExtras(idtexto to "trantext")
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle, null, extras)
+
         }
+
+
 
     }
 
